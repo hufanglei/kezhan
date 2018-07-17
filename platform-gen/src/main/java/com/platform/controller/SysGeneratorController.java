@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -61,8 +62,8 @@ public class SysGeneratorController {
         //获取表名，不进行xss过滤
         HttpServletRequest orgRequest = XssHttpServletRequestWrapper.getOrgRequest(request);
         String tables = orgRequest.getParameter("tables");
+        tables = URLDecoder.decode(tables, "UTF-8");
         tableNames = JSON.parseArray(tables).toArray(tableNames);
-
         byte[] data = sysGeneratorService.generatorCode(tableNames);
 
         response.reset();
