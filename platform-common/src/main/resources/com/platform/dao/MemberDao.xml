@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.platform.dao.MemberDao">
+
+    <resultMap type="com.platform.entity.MemberEntity" id="memberMap">
+        <result property="id" column="id"/>
+        <result property="openid" column="openid"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="avatar" column="avatar"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.platform.entity.MemberEntity">
+		select
+			`id`,
+			`openid`,
+			`nick_name`,
+			`avatar`
+		from member
+		where id = #{id}
+	</select>
+
+	<select id="queryList" resultType="com.platform.entity.MemberEntity">
+		select
+    		`id`,
+    		`openid`,
+    		`nick_name`,
+    		`avatar`
+		from member
+		WHERE 1=1
+		<if test="name != null and name.trim() != ''">
+			AND name LIKE concat('%',#{name},'%')
+		</if>
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from member
+		WHERE 1=1
+        <if test="name != null and name.trim() != ''">
+            AND name LIKE concat('%',#{name},'%')
+        </if>
+	</select>
+	 
+	<insert id="save" parameterType="com.platform.entity.MemberEntity">
+		insert into member(
+			`id`,
+			`openid`,
+			`nick_name`,
+			`avatar`)
+		values(
+			#{id},
+			#{openid},
+			#{nickName},
+			#{avatar})
+	</insert>
+	 
+	<update id="update" parameterType="com.platform.entity.MemberEntity">
+		update member 
+		<set>
+			<if test="openid != null">`openid` = #{openid}, </if>
+			<if test="nickName != null">`nick_name` = #{nickName}, </if>
+			<if test="avatar != null">`avatar` = #{avatar}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from member where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from member where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,76 @@
+INSERT INTO `sys_menu`
+VALUES
+	(
+		'0701',
+		'07',
+		'查看',
+		NULL,
+		'sys:member:list,sys:member:info',
+		'2',
+		NULL,
+		'1',
+		'735e3dd6bb4f4a9191a66761d6g73918',
+		'1',
+		'1',
+		'2017-11-20 12:38:00',
+		NULL,
+		'2017-11-20 12:38:01'
+	);
+
+INSERT INTO `sys_menu`
+VALUES
+	(
+		'0702',
+		'07',
+		'新增',
+		NULL,
+		'sys:member:save,sys:member:select',
+		'2',
+		NULL,
+		'2',
+		'735e3dd6bb4f4a9191a66761d6g73918',
+		'1',
+		'1',
+		'2017-11-20 12:38:39',
+		NULL,
+		'2017-11-20 12:38:41'
+	);
+
+INSERT INTO `sys_menu`
+VALUES
+	(
+		'0703',
+		'07',
+		'修改',
+		NULL,
+		'sys:member:update',
+		'2',
+		NULL,
+		'3',
+		'735e3dd6bb4f4a9191a66761d6g73918',
+		'1',
+		'1',
+		'2017-11-20 12:39:26',
+		NULL,
+		'2017-11-20 12:39:31'
+	);
+
+INSERT INTO `sys_menu`
+VALUES
+	(
+		'0704',
+		'07',
+		'刪除',
+		NULL,
+		'sys:member:delete',
+		'2',
+		NULL,
+		'4',
+		'735e3dd6bb4f4a9191a66761d6g73918',
+		'1',
+		'1',
+		'2017-11-20 12:39:27',
+		NULL,
+		'2017-11-20 12:39:31'
+	);
+
