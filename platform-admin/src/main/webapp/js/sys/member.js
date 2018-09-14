@@ -1,4 +1,9 @@
 $(function () {
+    let tagId = vm.tagId;
+    // let url = '../member/list';
+    // if (tagId) {
+    //     url += '?tagId=' + tagId;
+    // }
     $("#jqGrid").Grid({
         url: '../member/list',
         colModel: [
@@ -28,25 +33,22 @@ let vm = new Vue({
     data: {
         showList: true,
         title: null,
-member: {id:'', openid:'', nickName:'', avatar:'',   },
-ruleValidate: {
-    name: [
-        {required: true, message: '名称不能为空', trigger: 'blur'}
-    ]
-},
-q: {
-    name: ''
-}
+    member: {id:'', openid:'', nickName:'', avatar:'',   },
+    ruleValidate: {
+        name: [
+            {required: true, message: '名称不能为空', trigger: 'blur'}
+        ]
+    },
+    q: {
+        name: ''
+    },
+    tagId:getQueryString("tagId"),
 },
 methods: {
     query: function () {
         vm.reload();
     },
-    add: function () {
-        vm.showList = false;
-        vm.title = "新增";
-        vm.member = {id:'', openid:'', nickName:'', avatar:'', };
-    },
+
     update: function (event) {
         let id = getSelectedRow("#jqGrid");
         if (id == null) {
@@ -71,16 +73,40 @@ methods: {
             }
         });
     },
-    del: function (event) {
+    band: function (event) {
         let ids = getSelectedRows("#jqGrid");
         if (ids == null){
             return;
         }
-
-        confirm('确定要删除选中的记录？', function () {
+        let obj = {};
+        obj.tagId = vm.tagId;
+        obj.ids = ids;
+        confirm('确定要绑定选中的记录？', function () {
             Ajax.request({
-                url: "../member/delete",
-                params: JSON.stringify(ids),
+                url: "../member/band",
+                params: JSON.stringify(obj),
+                type: "POST",
+                contentType: "application/json",
+                successCallback: function () {
+                    alert('操作成功', function (index) {
+                        vm.reload();
+                    });
+                }
+            });
+        });
+    },
+    unband: function (event) {
+        let ids = getSelectedRows("#jqGrid");
+        if (ids == null){
+            return;
+        }
+        let obj = {};
+        obj.tagId = vm.tagId;
+        obj.ids = ids;
+        confirm('确定要绑定选中的记录？', function () {
+            Ajax.request({
+                url: "../member/unband",
+                params: JSON.stringify(obj),
                 type: "POST",
                 contentType: "application/json",
                 successCallback: function () {

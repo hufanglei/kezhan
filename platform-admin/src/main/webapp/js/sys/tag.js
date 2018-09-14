@@ -50,6 +50,28 @@ methods: {
         vm.title = "新增";
         vm.tag = {id:'', name:'', createTime:'', updateTime:'', };
     },
+    openMembers:function(){
+        let id = getSelectedRow("#jqGrid");
+        if (id == null) {
+            return;
+        }
+        openWindow({
+            type: 2,
+            title: '绑定会员',
+            content: '../sys/member.html?tagId=' + id
+        });
+    },
+    openUnbandMembers:function(){
+        let id = getSelectedRow("#jqGrid");
+        if (id == null) {
+            return;
+        }
+        openWindow({
+            type: 2,
+            title: '解绑会员',
+            content: '../sys/member.html?tagId=' + id
+        });
+    },
     update: function (event) {
         let id = getSelectedRow("#jqGrid");
         if (id == null) {

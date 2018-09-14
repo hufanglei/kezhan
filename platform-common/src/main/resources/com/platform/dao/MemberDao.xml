@@ -22,36 +22,82 @@
 
 	<select id="queryList" resultType="com.platform.entity.MemberEntity">
 		select
-    		`id`,
-    		`openid`,
-    		`nick_name`,
-    		`avatar`
-		from member
+    		t.`id`,
+    		t.`openid`,
+    		t.`nick_name`,
+    		t.`avatar`
+		from member t
 		WHERE 1=1
 		<if test="name != null and name.trim() != ''">
-			AND name LIKE concat('%',#{name},'%')
+			AND t.name LIKE concat('%',#{name},'%')
 		</if>
+
         <choose>
             <when test="sidx != null and sidx.trim() != ''">
                 order by ${sidx} ${order}
             </when>
 			<otherwise>
-                order by id desc
+                order by t.id desc
 			</otherwise>
         </choose>
 		<if test="offset != null and limit != null">
 			limit #{offset}, #{limit}
 		</if>
 	</select>
-	
- 	<select id="queryTotal" resultType="int">
+
+
+
+	<select id="queryTotal" resultType="int">
 		select count(*) from member
 		WHERE 1=1
         <if test="name != null and name.trim() != ''">
             AND name LIKE concat('%',#{name},'%')
         </if>
 	</select>
-	 
+
+	<select id="queryListFilter" resultType="com.platform.entity.MemberEntity">
+		select
+		t.`id`,
+		t.`openid`,
+		t.`nick_name`,
+		t.`avatar`
+		from member t
+		left join  member_tag t1 on t.id = t1.member_id
+		WHERE 1=1
+		<if test="name != null and name.trim() != ''">
+			AND t.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="tagId != null and tagId != ''">
+			AND t1.tag_id = #{tagId}
+		</if>
+
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by ${sidx} ${order}
+			</when>
+			<otherwise>
+				order by t.id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+
+	<select id="queryTotalFilter" resultType="int">
+		select count(*) from member t
+		left join  member_tag t1 on t.id = t1.member_id
+		WHERE 1=1
+		<if test="name != null and name.trim() != ''">
+			AND t.name LIKE concat('%',#{name},'%')
+		</if>
+		<if test="tagId != null and tagId != ''">
+			AND t1.tag_id = #{tagId}
+		</if>
+	</select>
+
+
 	<insert id="save" parameterType="com.platform.entity.MemberEntity">
 		insert into member(
 			`id`,

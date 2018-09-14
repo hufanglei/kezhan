@@ -32,8 +32,18 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public List<MemberEntity> queryListFilter(Map<String, Object> map) {
+        return memberDao.queryListFilter(map);
+    }
+
+    @Override
     public int queryTotal(Map<String, Object> map) {
         return memberDao.queryTotal(map);
+    }
+
+    @Override
+    public int queryTotalFilter(Map<String, Object> map) {
+        return memberDao.queryTotalFilter(map);
     }
 
     @Override

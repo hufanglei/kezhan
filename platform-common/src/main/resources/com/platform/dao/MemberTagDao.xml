@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.platform.dao.MemberTagDao">
+
+    <resultMap type="com.platform.entity.MemberTagEntity" id="memberTagMap">
+        <result property="memberId" column="member_id"/>
+        <result property="tagId" column="tag_id"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.platform.entity.MemberTagEntity" >
+		select
+			`member_id`,
+			`tag_id`
+		from member_tag
+		where member_id = #{id}
+	</select>
+
+	<select id="query" resultType="com.platform.entity.MemberTagEntity" parameterType="com.platform.entity.MemberTagEntity">
+		select
+			`member_id`,
+			`tag_id`
+		from member_tag
+		where member_id = #{memberId} and  tag_id = #{tagId}
+	</select>
+
+	<delete id="del"  parameterType="com.platform.entity.MemberTagEntity" >
+		delete from member_tag where member_id = #{memberId}   and  tag_id = #{tagId}
+	</delete>
+
+	<select id="queryList" resultType="com.platform.entity.MemberTagEntity">
+		select
+    		`member_id`,
+    		`tag_id`
+		from member_tag
+		WHERE 1=1
+		<if test="name != null and name.trim() != ''">
+			AND name LIKE concat('%',#{name},'%')
+		</if>
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by member_id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from member_tag
+		WHERE 1=1
+        <if test="name != null and name.trim() != ''">
+            AND name LIKE concat('%',#{name},'%')
+        </if>
+	</select>
+	 
+	<insert id="save" parameterType="com.platform.entity.MemberTagEntity">
+		insert into member_tag(
+			`member_id`,
+			`tag_id`)
+		values(
+			#{memberId},
+			#{tagId})
+	</insert>
+	 
+	<update id="update" parameterType="com.platform.entity.MemberTagEntity">
+		update member_tag 
+		<set>
+			<if test="tagId != null">`tag_id` = #{tagId}</if>
+		</set>
+		where member_id = #{memberId}
+	</update>
+	
+	<delete id="delete">
+		delete from member_tag where member_id = #{value}
+	</delete>
+
+
+	<delete id="deleteBatch">
+		delete from member_tag where member_id in 
+		<foreach item="memberId" collection="array" open="(" separator="," close=")">
+			#{memberId}
+		</foreach>
+	</delete>
+
+</mapper>
