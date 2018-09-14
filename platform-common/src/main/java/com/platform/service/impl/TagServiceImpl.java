@@ -57,4 +57,9 @@ public class TagServiceImpl implements TagService {
     public int deleteBatch(Integer[]ids) {
         return tagDao.deleteBatch(ids);
     }
+
+    @Override
+    public TagEntity queryDefault() {
+        return tagDao.queryDefault();
+    }
 }

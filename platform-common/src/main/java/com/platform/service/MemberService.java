@@ -13,6 +13,7 @@ import java.util.Map;
  * @date 2018-09-14 07:49:47
  */
 public interface MemberService {
+    MemberEntity queryObjectByOpenid(String openid);
 
     /**
      * 根据主键查询实体

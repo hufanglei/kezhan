@@ -10,6 +10,19 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
+
+	<select id="queryDefault" resultType="com.platform.entity.TagEntity" >
+		select
+			`id`,
+			`name`,
+			`create_time`,
+			`update_time`,
+			`count`,
+			`default_code`
+		from tag
+		where default_code = '001'
+		limit 1
+	</select>
 	<select id="queryObject" resultType="com.platform.entity.TagEntity">
 		select
 			`id`,

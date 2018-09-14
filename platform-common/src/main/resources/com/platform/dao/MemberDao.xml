@@ -10,6 +10,16 @@
         <result property="avatar" column="avatar"/>
     </resultMap>
 
+	<select id="queryObjectByOpenid" resultType="com.platform.entity.MemberEntity" parameterType="string">
+		select
+			`id`,
+			`openid`,
+			`nick_name`,
+			`avatar`
+		from member
+		where openid = #{openid}
+		limit 1
+	</select>
 	<select id="queryObject" resultType="com.platform.entity.MemberEntity">
 		select
 			`id`,

@@ -22,6 +22,11 @@ public class MemberServiceImpl implements MemberService {
     private MemberDao memberDao;
 
     @Override
+    public MemberEntity queryObjectByOpenid(String openid) {
+        return memberDao.queryObjectByOpenid(openid);
+    }
+
+    @Override
     public MemberEntity queryObject(String id) {
         return memberDao.queryObject(id);
     }

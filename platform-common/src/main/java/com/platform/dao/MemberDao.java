@@ -31,4 +31,6 @@ public interface MemberDao extends BaseDao<MemberEntity> {
 
    String  getTagNamesByMemberId(@Param("memberId") String memberId);
 
+    MemberEntity queryObjectByOpenid(@Param("openid") String openid);
+
 }
