@@ -31,6 +31,9 @@ public class MemberEntity implements Serializable {
      */
     private String avatar;
 
+    private String tagNames;
+
+
     /**
      * 设置：主键id
      */
@@ -82,5 +85,13 @@ public class MemberEntity implements Serializable {
      */
     public String getAvatar() {
         return avatar;
+    }
+
+    public String getTagNames() {
+        return tagNames;
+    }
+
+    public void setTagNames(String tagNames) {
+        this.tagNames = tagNames;
     }
 }

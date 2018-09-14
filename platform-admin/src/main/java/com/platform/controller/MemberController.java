@@ -54,9 +54,17 @@ public class MemberController {
         int total = 0;
         if(params.get("tagId")==null || "".equals(params.get("tagId"))){
            memberList = memberService.queryList(query);
+           for (MemberEntity m:memberList){
+               String tagNames = memberService.getTagNamesByMemberId(m.getId());
+               m.setTagNames(tagNames);
+           }
            total = memberService.queryTotal(query);
        }else{
             memberList = memberService.queryListFilter(query);
+            for (MemberEntity m:memberList){
+                String tagNames = memberService.getTagNamesByMemberId(m.getId());
+                m.setTagNames(tagNames);
+            }
             total = memberService.queryTotalFilter(query);
        }
         PageUtils pageUtil = new PageUtils(memberList, total, query.getLimit(), query.getPage());

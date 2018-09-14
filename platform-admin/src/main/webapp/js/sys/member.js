@@ -15,6 +15,7 @@ $(function () {
             },
             {label: '微信openid', name: 'openid', index: 'openid', width: 80},
             {label: '昵称', name: 'nickName', index: 'nick_name', width: 80},
+            {label: '所在标签组', name: 'tagNames', index: 'tagNames', width: 80},
 
         ]
     });

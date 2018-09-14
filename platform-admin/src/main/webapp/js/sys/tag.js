@@ -4,6 +4,16 @@ $(function () {
         colModel: [
             {label: 'id', name: 'id', index: 'id', key: true},
             {label: '标签名称', name: 'name', index: 'name', width: 80},
+            {label: '粉丝数量', name: 'count', index: 'count', width: 80},
+            {label: '是否默认', name: 'defaultCode', index: 'default_code', width: 80,
+                formatter:function (value) {
+                    if(value){
+                        return sysEnums.IS_DEFAULT[value];
+                    }else{
+                        return '-';
+                    }
+                }
+            },
             {label: '创建时间', name: 'createTime', index: 'create_time', width: 80,
                 formatter:function (value) {
                     return transDate(value);
@@ -59,6 +69,44 @@ methods: {
             type: 2,
             title: '绑定会员',
             content: '../sys/member.html?tagId=' + id
+        });
+    },
+    setdefault:function(){
+        let id = getSelectedRow("#jqGrid");
+        if (id == null) {
+            return;
+        }
+        confirm('确定该标签设置默认？', function () {
+            Ajax.request({
+                url: "../tag/seting",
+                params: JSON.stringify({id:id, defaultCode:"001"}),
+                type: "POST",
+                contentType: "application/json",
+                successCallback: function () {
+                    alert('操作成功', function (index) {
+                        vm.reload();
+                    });
+                }
+            });
+        });
+    },
+    setundefault:function(){
+        let id = getSelectedRow("#jqGrid");
+        if (id == null) {
+            return;
+        }
+        confirm('确定取消该标签设置默认？', function () {
+            Ajax.request({
+                url: "../tag/seting",
+                params: JSON.stringify({id:id, defaultCode:"002"}),
+                type: "POST",
+                contentType: "application/json",
+                successCallback: function () {
+                    alert('操作成功', function (index) {
+                        vm.reload();
+                    });
+                }
+            });
         });
     },
     openUnbandMembers:function(){

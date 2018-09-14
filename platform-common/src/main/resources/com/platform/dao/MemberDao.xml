@@ -46,6 +46,12 @@
 	</select>
 
 
+	<select id="getTagNamesByMemberId" parameterType="java.lang.String" resultType="java.lang.String">
+		select GROUP_CONCAT(t2.name)  from member_tag  t1
+		left join tag t2
+		on t1.tag_id = t2.id
+		and  member_id = #{memberId}
+	</select>
 
 	<select id="queryTotal" resultType="int">
 		select count(*) from member

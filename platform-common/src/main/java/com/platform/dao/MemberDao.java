@@ -1,6 +1,7 @@
 package com.platform.dao;
 
 import com.platform.entity.MemberEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -27,5 +28,7 @@ public interface MemberDao extends BaseDao<MemberEntity> {
      * @return 总数
      */
     int queryTotalFilter(Map<String, Object> map);
+
+   String  getTagNamesByMemberId(@Param("memberId") String memberId);
 
 }

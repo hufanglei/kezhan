@@ -66,4 +66,9 @@ public class MemberServiceImpl implements MemberService {
     public int deleteBatch(String[]ids) {
         return memberDao.deleteBatch(ids);
     }
+
+    @Override
+    public String getTagNamesByMemberId(String memberId) {
+        return memberDao.getTagNamesByMemberId(memberId);
+    }
 }

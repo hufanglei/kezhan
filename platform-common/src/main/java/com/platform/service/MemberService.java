@@ -1,6 +1,7 @@
 package com.platform.service;
 
 import com.platform.entity.MemberEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -82,4 +83,6 @@ public interface MemberService {
      * @return 删除条数
      */
     int deleteBatch(String[] ids);
+
+    String  getTagNamesByMemberId(String memberId);
 }

@@ -31,6 +31,16 @@ public class TagEntity implements Serializable {
      */
     private Date updateTime;
 
+    /**
+     * 粉丝数量
+     */
+    private Integer count;
+    /**
+     * 是否默认 001 是 002不是
+     */
+    private String defaultCode;
+
+
     public TagEntity() {
     }
 
@@ -38,6 +48,22 @@ public class TagEntity implements Serializable {
         this.id = id;
         this.name = name;
         this.createTime = createTime;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public String getDefaultCode() {
+        return defaultCode;
+    }
+
+    public void setDefaultCode(String defaultCode) {
+        this.defaultCode = defaultCode;
     }
 
     /**

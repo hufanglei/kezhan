@@ -117,13 +117,11 @@ public class TagController {
      * 修改
      */
     @RequestMapping("/update")
-//    @RequiresPermissions("tag:update")
     @ResponseBody
     public R update(@RequestBody TagEntity tag) {
         //调用接口凭证
         Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
         if(null != token){
-            //删除菜单
             boolean result = TagUtil.updateTag(tag.getId(), tag.getName(), token.getAccessToken());
             //判断标签删除结果
             if(result){
@@ -138,11 +136,26 @@ public class TagController {
         return R.ok();
     }
 
+    @RequestMapping("/seting")
+    @ResponseBody
+    public R delete(@RequestBody TagEntity tagEntity) {
+        if("001".equals(tagEntity.getDefaultCode())){
+            //先设置全部非默认
+            List<TagEntity> list = tagService.queryList(new HashMap<>());
+            for (TagEntity tag: list){
+                tag.setDefaultCode("002");
+                tagService.update(tag);
+            }
+        }
+        tagEntity.setUpdateTime(new Date());
+        tagService.update(tagEntity);
+        return R.ok();
+    }
+
     /**
      * 删除
      */
     @RequestMapping("/delete")
-//    @RequiresPermissions("tag:delete")
     @ResponseBody
     public R delete(@RequestBody Integer[]ids) {
         //调用接口凭证

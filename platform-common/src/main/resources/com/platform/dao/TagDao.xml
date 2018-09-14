@@ -15,7 +15,9 @@
 			`id`,
 			`name`,
 			`create_time`,
-			`update_time`
+			`update_time`,
+			`count`,
+			`default_code`
 		from tag
 		where id = #{id}
 	</select>
@@ -25,7 +27,9 @@
     		`id`,
     		`name`,
     		`create_time`,
-    		`update_time`
+    		`update_time`,
+			`count`,
+			`default_code`
 		from tag
 		WHERE 1=1
 		<if test="name != null and name.trim() != ''">
@@ -57,12 +61,16 @@
 			`id`,
 			`name`,
 			`create_time`,
-			`update_time`)
+			`update_time`,
+			`count`,
+			`default_code`)
 		values(
 			#{id},
 			#{name},
 			#{createTime},
-			#{updateTime})
+			#{updateTime},
+			#{count},
+			#{defaultCode})
 	</insert>
 	 
 	<update id="update" parameterType="com.platform.entity.TagEntity">
@@ -70,7 +78,9 @@
 		<set>
 			<if test="name != null">`name` = #{name}, </if>
 			<if test="createTime != null">`create_time` = #{createTime}, </if>
-			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+			<if test="updateTime != null">`update_time` = #{updateTime},</if>
+			<if test="count != null">`count` = #{count},</if>
+			<if test="defaultCode != null">`default_code` = #{defaultCode}</if>
 		</set>
 		where id = #{id}
 	</update>
