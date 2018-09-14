@@ -1,13 +1,7 @@
 package com.platform.controller.weixin;
 
-import com.platform.entity.MemberEntity;
-import com.platform.entity.MemberTagEntity;
-import com.platform.entity.TagEntity;
-import com.platform.entity.WechatSettingEntity;
-import com.platform.service.MemberService;
-import com.platform.service.MemberTagService;
-import com.platform.service.TagService;
-import com.platform.service.WechatSettingService;
+import com.platform.entity.*;
+import com.platform.service.*;
 import com.platform.util.ApiBaseAction;
 import com.platform.utils.IdUtil;
 import com.platform.utils.SHA1;
@@ -44,6 +38,8 @@ public class HomeController extends ApiBaseAction {
     private MemberTagService memberTagService;
     @Autowired
     private WechatSettingService wechatSettingService;
+    @Autowired
+    private TbWeixinTokenService tbWeixinTokenService;
 //    private String Token = "yapeS8jTRa5df3OVgIOdD4C7IkoFSGLw";
 
     @RequestMapping("/index")
@@ -145,11 +141,24 @@ public class HomeController extends ApiBaseAction {
 
 
             //根据openid获取用户信息
-            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
-            WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
-            //调用接口凭证
-            Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
-            UserInfo userInfo = AdvancedUtil.getUserInfo(token.getAccessToken(), fromUserName);
+
+
+            List<TbWeixinTokenEntity> tbWeixinTokenEntities = tbWeixinTokenService.queryList(new HashMap<>());
+            WechatSettingEntity wechatSettingEntity = null;
+            TbWeixinTokenEntity tbWeixinTokenEntity = null;
+            Token token = null;
+            String accessToken="";
+            if(tbWeixinTokenEntities.size()==0){
+                List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+                wechatSettingEntity = wechatSettingEntities.get(0);
+                token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
+                accessToken = token.getAccessToken();
+            }else{
+                tbWeixinTokenEntity = tbWeixinTokenEntities.get(0);
+                accessToken = tbWeixinTokenEntity.getToken();
+            }
+
+            UserInfo userInfo = AdvancedUtil.getUserInfo(accessToken, fromUserName);
             String openid = userInfo.getOpenid();
             //添加或者更新用户
             MemberEntity memberEntity = memberService.queryObjectByOpenid(openid);

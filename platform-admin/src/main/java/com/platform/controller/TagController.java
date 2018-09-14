@@ -1,8 +1,10 @@
 package com.platform.controller;
 
 import com.platform.entity.TagEntity;
+import com.platform.entity.TbWeixinTokenEntity;
 import com.platform.entity.WechatSettingEntity;
 import com.platform.service.TagService;
+import com.platform.service.TbWeixinTokenService;
 import com.platform.service.WechatSettingService;
 import com.platform.utils.PageUtils;
 import com.platform.utils.Query;
@@ -38,6 +40,8 @@ public class TagController {
     private TagService tagService;
     @Autowired
     private WechatSettingService wechatSettingService;
+    @Autowired
+    private TbWeixinTokenService tbWeixinTokenService;
 
     /**
      * 查看列表
@@ -46,13 +50,23 @@ public class TagController {
 //    @RequiresPermissions("tag:list")
     @ResponseBody
     public R list(@RequestParam Map<String, Object> params) {
-        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
-        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
-        //调用接口凭证
-        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
-        if(null != token){
+        List<TbWeixinTokenEntity> tbWeixinTokenEntities = tbWeixinTokenService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = null;
+        TbWeixinTokenEntity tbWeixinTokenEntity = null;
+        Token token = null;
+        String accessToken="";
+        if(tbWeixinTokenEntities.size()==0){
+            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+             wechatSettingEntity = wechatSettingEntities.get(0);
+             token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
+            accessToken = token.getAccessToken();
+        }else{
+             tbWeixinTokenEntity = tbWeixinTokenEntities.get(0);
+            accessToken = tbWeixinTokenEntity.getToken();
+        }
+        if(null != accessToken && !"".equals(accessToken)){
             //创建菜单
-            TagAll tagAll = TagUtil.getTag(token.getAccessToken());
+            TagAll tagAll = TagUtil.getTag(accessToken);
             if(tagAll!=null && tagAll.getTags().size()>0){
                 ArrayList<TagItem> tags = tagAll.getTags();
                 boolean flag = true;
@@ -100,13 +114,23 @@ public class TagController {
 //    @RequiresPermissions("tag:save")
     @ResponseBody
     public R save(@RequestBody TagEntity tag) {
-        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
-        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
-        //调用接口凭证
-        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
-        if(null != token){
+        List<TbWeixinTokenEntity> tbWeixinTokenEntities = tbWeixinTokenService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = null;
+        TbWeixinTokenEntity tbWeixinTokenEntity = null;
+        Token token = null;
+        String accessToken="";
+        if(tbWeixinTokenEntities.size()==0){
+            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+            wechatSettingEntity = wechatSettingEntities.get(0);
+            token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
+            accessToken = token.getAccessToken();
+        }else{
+            tbWeixinTokenEntity = tbWeixinTokenEntities.get(0);
+            accessToken = tbWeixinTokenEntity.getToken();
+        }
+        if(null != accessToken && !"".equals(accessToken) ){
             //创建菜单
-            Tag tag1 = TagUtil.createTag(tag.getName(), token.getAccessToken());
+            Tag tag1 = TagUtil.createTag(tag.getName(), accessToken);
             //判断菜单创建结果
             if(tag1!=null){
                 tag.setId(tag1.getId());
@@ -128,13 +152,22 @@ public class TagController {
     @RequestMapping("/update")
     @ResponseBody
     public R update(@RequestBody TagEntity tag) {
-        //调用接口凭证
-        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
-        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
-        //调用接口凭证
-        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
-        if(null != token){
-            boolean result = TagUtil.updateTag(tag.getId(), tag.getName(), token.getAccessToken());
+        List<TbWeixinTokenEntity> tbWeixinTokenEntities = tbWeixinTokenService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = null;
+        TbWeixinTokenEntity tbWeixinTokenEntity = null;
+        Token token = null;
+        String accessToken="";
+        if(tbWeixinTokenEntities.size()==0){
+            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+            wechatSettingEntity = wechatSettingEntities.get(0);
+            token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
+            accessToken = token.getAccessToken();
+        }else{
+            tbWeixinTokenEntity = tbWeixinTokenEntities.get(0);
+            accessToken = tbWeixinTokenEntity.getToken();
+        }
+        if(null != accessToken && !"".equals(accessToken)){
+            boolean result = TagUtil.updateTag(tag.getId(), tag.getName(), accessToken);
             //判断标签删除结果
             if(result){
                 System.out.println("标签编辑成功!");
@@ -170,14 +203,23 @@ public class TagController {
     @RequestMapping("/delete")
     @ResponseBody
     public R delete(@RequestBody Integer[]ids) {
-        //调用接口凭证
-        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
-        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
-        //调用接口凭证
-        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
-        if(null != token){
+        List<TbWeixinTokenEntity> tbWeixinTokenEntities = tbWeixinTokenService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = null;
+        TbWeixinTokenEntity tbWeixinTokenEntity = null;
+        Token token = null;
+        String accessToken="";
+        if(tbWeixinTokenEntities.size()==0){
+            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+            wechatSettingEntity = wechatSettingEntities.get(0);
+            token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
+            accessToken = token.getAccessToken();
+        }else{
+            tbWeixinTokenEntity = tbWeixinTokenEntities.get(0);
+            accessToken = tbWeixinTokenEntity.getToken();
+        }
+        if(null != accessToken && !"".equals(accessToken)){
             //删除菜单
-            boolean result = TagUtil.deleteTag(ids[0], token.getAccessToken());
+            boolean result = TagUtil.deleteTag(ids[0], accessToken);
             //判断菜单删除结果
             if(result){
                 //log.info("菜单删除成功");
