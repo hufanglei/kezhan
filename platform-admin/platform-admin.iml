@@ -47,6 +47,19 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/src/main/webapp/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src/main/webapp/lib" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/src/main/webapp/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/src/main/webapp/lib" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
     <orderEntry type="module" module-name="platform-common" />
     <orderEntry type="library" name="Maven: com.qiniu:qiniu-java-sdk:7.2.15" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.9.1" level="project" />
@@ -76,6 +89,9 @@
     <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.weixin:aes-jar:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.xstream:xstream:1.3.1" level="project" />
+    <orderEntry type="library" name="Maven: xpp3:xpp3_min:1.1.4c" level="project" />
     <orderEntry type="module" module-name="platform-gen" />
     <orderEntry type="module" module-name="platform-schedule" />
     <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.3" level="project" />

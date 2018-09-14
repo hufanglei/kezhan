@@ -1,1 +1,4 @@
 mvn install -Dmaven.test.skip=true
+
+
+C:\Users\Administrator>mvn install:install-file -Dfile=E:\aes-jre1.6.jar -DgroupId=com.weixin -DartifactId=aes-jar -Dversion=1.0.0 -Dpackaging=jar

@@ -49,7 +49,7 @@
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
-        <finalName>platform-framework</finalName>
+        <finalName>tagmanage</finalName>
         <plugins>
             <!-- 合并多个war -->
             <plugin>
