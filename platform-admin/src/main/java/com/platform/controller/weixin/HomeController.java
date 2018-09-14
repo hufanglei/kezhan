@@ -1,19 +1,16 @@
 package com.platform.controller.weixin;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.platform.dao.MemberDao;
-import com.platform.dao.TagDao;
 import com.platform.entity.MemberEntity;
 import com.platform.entity.MemberTagEntity;
 import com.platform.entity.TagEntity;
+import com.platform.entity.WechatSettingEntity;
 import com.platform.service.MemberService;
 import com.platform.service.MemberTagService;
 import com.platform.service.TagService;
+import com.platform.service.WechatSettingService;
 import com.platform.util.ApiBaseAction;
 import com.platform.utils.IdUtil;
 import com.platform.utils.SHA1;
-import com.platform.utils.StringUtils;
 import com.platform.weixinUtils.tag.TagBatch;
 import com.platform.weixinUtils.util.AdvancedUtil;
 import com.platform.weixinUtils.util.Parameter;
@@ -21,13 +18,10 @@ import com.platform.weixinUtils.util.TagUtil;
 import com.platform.weixinUtils.vo.Token;
 import com.platform.weixinUtils.vo.UserInfo;
 import com.platform.weixinUtils.vo.WeiXinUtil;
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,7 +31,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.util.*;
 
 @RestController
@@ -49,7 +42,9 @@ public class HomeController extends ApiBaseAction {
     private TagService tagService;
     @Autowired
     private MemberTagService memberTagService;
-    private String Token = "yapeS8jTRa5df3OVgIOdD4C7IkoFSGLw";
+    @Autowired
+    private WechatSettingService wechatSettingService;
+//    private String Token = "yapeS8jTRa5df3OVgIOdD4C7IkoFSGLw";
 
     @RequestMapping("/index")
     public void index(HttpServletRequest request, HttpServletResponse response, @RequestParam Map<String, String> params) {
@@ -79,6 +74,8 @@ public class HomeController extends ApiBaseAction {
 
     private String access(HttpServletRequest request,
                           HttpServletResponse response) {
+        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
         // 验证URL真实性
         System.out.println("进入验证access");
         String signature = request.getParameter("signature");// 微信加密签名
@@ -86,7 +83,7 @@ public class HomeController extends ApiBaseAction {
         String nonce = request.getParameter("nonce");// 随机数
         String echostr = request.getParameter("echostr");// 随机字符串
         List<String> params = new ArrayList<String>();
-        params.add(Token);
+        params.add(wechatSettingEntity.getToken());
         params.add(timestamp);
         params.add(nonce);
         // 1. 将token、timestamp、nonce三个参数进行字典序排序
@@ -148,7 +145,10 @@ public class HomeController extends ApiBaseAction {
 
 
             //根据openid获取用户信息
-            com.platform.weixinUtils.vo.Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
+            List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+            WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
+            //调用接口凭证
+            Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
             UserInfo userInfo = AdvancedUtil.getUserInfo(token.getAccessToken(), fromUserName);
             String openid = userInfo.getOpenid();
             //添加或者更新用户

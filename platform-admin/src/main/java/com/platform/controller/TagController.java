@@ -1,7 +1,9 @@
 package com.platform.controller;
 
 import com.platform.entity.TagEntity;
+import com.platform.entity.WechatSettingEntity;
 import com.platform.service.TagService;
+import com.platform.service.WechatSettingService;
 import com.platform.utils.PageUtils;
 import com.platform.utils.Query;
 import com.platform.utils.R;
@@ -34,6 +36,8 @@ import java.util.*;
 public class TagController {
     @Autowired
     private TagService tagService;
+    @Autowired
+    private WechatSettingService wechatSettingService;
 
     /**
      * 查看列表
@@ -42,8 +46,10 @@ public class TagController {
 //    @RequiresPermissions("tag:list")
     @ResponseBody
     public R list(@RequestParam Map<String, Object> params) {
+        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
         //调用接口凭证
-        Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
+        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
         if(null != token){
             //创建菜单
             TagAll tagAll = TagUtil.getTag(token.getAccessToken());
@@ -94,7 +100,10 @@ public class TagController {
 //    @RequiresPermissions("tag:save")
     @ResponseBody
     public R save(@RequestBody TagEntity tag) {
-        Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
+        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
+        //调用接口凭证
+        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
         if(null != token){
             //创建菜单
             Tag tag1 = TagUtil.createTag(tag.getName(), token.getAccessToken());
@@ -120,7 +129,10 @@ public class TagController {
     @ResponseBody
     public R update(@RequestBody TagEntity tag) {
         //调用接口凭证
-        Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
+        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
+        //调用接口凭证
+        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
         if(null != token){
             boolean result = TagUtil.updateTag(tag.getId(), tag.getName(), token.getAccessToken());
             //判断标签删除结果
@@ -159,7 +171,10 @@ public class TagController {
     @ResponseBody
     public R delete(@RequestBody Integer[]ids) {
         //调用接口凭证
-        Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
+        List<WechatSettingEntity> wechatSettingEntities = wechatSettingService.queryList(new HashMap<>());
+        WechatSettingEntity wechatSettingEntity = wechatSettingEntities.get(0);
+        //调用接口凭证
+        Token token = WeiXinUtil.getToken(wechatSettingEntity.getAppid(), wechatSettingEntity.getAppsecret());
         if(null != token){
             //删除菜单
             boolean result = TagUtil.deleteTag(ids[0], token.getAccessToken());
