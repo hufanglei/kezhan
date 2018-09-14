@@ -19,7 +19,7 @@ import net.oschina.j2cache.J2Cache;
  * 名称：J2CacheTest <br>
  * 描述：<br>
  *
- * @author 李鹏军
+ * @author hfl
  * @version 1.0
  * @since 1.0.0
  */

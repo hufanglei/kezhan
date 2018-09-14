@@ -16,7 +16,7 @@ import java.util.Map;
  * @email 939961241@qq.com
  * @date 2018-07-09 10:18:34
  */
-@Service("testUserService")
+//@Service("testUserService")
 public class TestSysUserServiceImpl implements TestSysUserService {
     @Autowired
     private TestSysUserDao testSysUserDao;

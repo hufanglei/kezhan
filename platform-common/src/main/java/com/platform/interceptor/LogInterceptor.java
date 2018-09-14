@@ -17,7 +17,7 @@ import java.util.Date;
 /**
  * 日志拦截器<br>
  *
- * @author 李鹏军
+ * @author hfl
  * @date 2017年11月19日 上午9:49:19
  */
 public class LogInterceptor extends HandlerInterceptorAdapter {

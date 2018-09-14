@@ -31,18 +31,18 @@ import java.util.Map;
  * @date 2018-07-09 10:13:43
  */
 public class TestSysUserController extends BaseSpringTestCase {
-    @Autowired
-    TestSysUserService testSysUserService;
-    private Logger logger = getLogger();
+//    @Autowired
+//    TestSysUserService testSysUserService;
+//    private Logger logger = getLogger();
 
-    @Test
-    public void querySysUserList() {
-        Map params = new HashMap();
-        List<SysUserEntity> list = testSysUserService.queryList(params);
-        if (list != null && list.size() != 0) {
-            for (SysUserEntity userEntity : list) {
-                logger.info("userId：" + userEntity.getUserId() + "；userName：" + userEntity.getUserName() + "；mobile：" + userEntity.getMobile());
-            }
-        }
-    }
+//    @Test
+//    public void querySysUserList() {
+//        Map params = new HashMap();
+//        List<SysUserEntity> list = testSysUserService.queryList(params);
+//        if (list != null && list.size() != 0) {
+//            for (SysUserEntity userEntity : list) {
+//                logger.info("userId：" + userEntity.getUserId() + "；userName：" + userEntity.getUserName() + "；mobile：" + userEntity.getMobile());
+//            }
+//        }
+//    }
 }
