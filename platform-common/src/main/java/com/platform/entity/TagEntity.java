@@ -31,6 +31,15 @@ public class TagEntity implements Serializable {
      */
     private Date updateTime;
 
+    public TagEntity() {
+    }
+
+    public TagEntity(Integer id, String name, Date createTime) {
+        this.id = id;
+        this.name = name;
+        this.createTime = createTime;
+    }
+
     /**
      * 设置：标签id
      */

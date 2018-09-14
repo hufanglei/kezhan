@@ -7,6 +7,7 @@ package com.platform.weixinUtils.util;
 import com.alibaba.fastjson.JSONException;
 import com.google.gson.Gson;
 import com.platform.weixinUtils.tag.Tag;
+import com.platform.weixinUtils.tag.TagAll;
 import com.platform.weixinUtils.tag.TagBatch;
 import com.platform.weixinUtils.tag.TagUser;
 import com.platform.weixinUtils.vo.WeiXinUtil;
@@ -41,8 +42,7 @@ public class TagUtil {
     /**
      * 创建标签
      */
-    public static boolean createTag(String tagName , String accessToken) {
-        boolean result = false;
+    public static Tag createTag(String tagName , String accessToken) {
         String url = tag_create_url.replace("ACCESS_TOKEN", accessToken);
         JSONObject j = new JSONObject();
         JSONObject group = new JSONObject();
@@ -59,29 +59,30 @@ public class TagUtil {
             JSONObject jsonTag = jsonObject.getJSONObject("tag");
             Tag tag = new Gson().fromJson(jsonTag.toString(), Tag.class);
             System.out.println(tag);
-            result = true;
+            return  tag;
         }catch (Exception e){
-            result = false;
             int errorCode = jsonObject.getInt("errcode");  String errorMsg = jsonObject.getString("errmsg");
             System.out.println("创建标签失败errCode：{} errmsg:{}" + errorCode + "====" + errorMsg);
+            return null;
         }
-        return result;
     }
 
 
     /**
      * 查询标签
      */
-    public static  String getTag(String accessToken){
+    public static TagAll getTag(String accessToken){
         String result = null;
         String requestUrl = tag_get_url.replace("ACCESS_TOKEN" ,accessToken);
 
-        //发起GET请求查询菜单
+        //发起GET请求查询标签
         JSONObject jsonObject = WeiXinUtil.httpsRequset(requestUrl, "GET", null);
         if (null != jsonObject){
-            result = jsonObject.toString();
+            TagAll tagAll = new Gson().fromJson(jsonObject.toString(), TagAll.class);
+            System.out.println(tagAll);
+            return tagAll;
         }
-        return  result;
+        return  null;
     }
 
     /**

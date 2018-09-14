@@ -1,5 +1,7 @@
 package com.platform.weixinUtils.texts;
 
+import com.platform.weixinUtils.tag.Tag;
+import com.platform.weixinUtils.tag.TagAll;
 import com.platform.weixinUtils.tag.TagBatch;
 import com.platform.weixinUtils.tag.TagUser;
 import com.platform.weixinUtils.util.Parameter;
@@ -20,9 +22,9 @@ public class TestTag {
         Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
         if(null != token){
             //创建菜单
-            String result = TagUtil.getTag(token.getAccessToken());
+            TagAll tagAll = TagUtil.getTag(token.getAccessToken());
             //查询菜单结果
-            System.out.println("查看标签查询结果:===" + result);
+            System.out.println("查看标签查询结果:===" + tagAll);
         }
     }
 
@@ -34,10 +36,10 @@ public class TestTag {
         Token token = WeiXinUtil.getToken(Parameter.corId, Parameter.appsecret);
         if(null != token){
             //创建菜单
-            boolean result = TagUtil.createTag(name, token.getAccessToken());
+            Tag tag = TagUtil.createTag(name, token.getAccessToken());
 
             //判断菜单创建结果
-            if(result){
+            if(tag!=null){
                 //log.info("菜单创建成功");
                 System.out.println("标签创建成功!");
             }else {

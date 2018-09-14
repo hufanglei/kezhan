@@ -75,10 +75,12 @@ methods: {
         });
     },
     del: function (event) {
-        let ids = getSelectedRows("#jqGrid");
-        if (ids == null){
+        let id = getSelectedRow("#jqGrid");
+        if (id == null){
             return;
         }
+        let ids = [];
+        ids.push(id);
 
         confirm('确定要删除选中的记录？', function () {
             Ajax.request({
