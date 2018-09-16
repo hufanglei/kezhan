@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-09-14 16:29:42
+Date: 2018-09-14 21:16:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,6 +59,7 @@ CREATE TABLE `member_tag` (
 -- ----------------------------
 -- Records of member_tag
 -- ----------------------------
+INSERT INTO `member_tag` VALUES ('1d1ff34789604862af5a27bfe571bd2e', '100');
 INSERT INTO `member_tag` VALUES ('1d1ff34789604862af5a27bfe571bd2e', '102');
 INSERT INTO `member_tag` VALUES ('1d1ff34789604862af5a27bfe571bd2e', '103');
 INSERT INTO `member_tag` VALUES ('70a5194e3458461c8e3ef76150f9a49c', '103');
@@ -115,8 +116,7 @@ CREATE TABLE `qrtz_cron_triggers` (
 -- ----------------------------
 -- Records of qrtz_cron_triggers
 -- ----------------------------
-INSERT INTO `qrtz_cron_triggers` VALUES ('PlatformScheduler', 'TASK_1', 'DEFAULT', '0 0/30 * * * ?', 'Asia/Shanghai');
-INSERT INTO `qrtz_cron_triggers` VALUES ('PlatformScheduler', 'TASK_2', 'DEFAULT', '0 0/30 * * * ?', 'Asia/Shanghai');
+INSERT INTO `qrtz_cron_triggers` VALUES ('PlatformScheduler', 'TASK_3', 'DEFAULT', '0 0/30 * * * ?', 'Asia/Shanghai');
 
 -- ----------------------------
 -- Table structure for qrtz_fired_triggers
@@ -172,8 +172,7 @@ CREATE TABLE `qrtz_job_details` (
 -- ----------------------------
 -- Records of qrtz_job_details
 -- ----------------------------
-INSERT INTO `qrtz_job_details` VALUES ('PlatformScheduler', 'TASK_1', 'DEFAULT', null, 'com.platform.utils.ScheduleJob', '0', '0', '0', '0', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000158BAF593307874000E3020302F3330202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000174000474657374740008706C6174666F726D74000FE69C89E58F82E695B0E6B58BE8AF95737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000017800);
-INSERT INTO `qrtz_job_details` VALUES ('PlatformScheduler', 'TASK_2', 'DEFAULT', null, 'com.platform.utils.ScheduleJob', '0', '0', '0', '0', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000158C377C4607874000E3020302F3330202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000274000574657374327074000FE697A0E58F82E695B0E6B58BE8AF95737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000017800);
+INSERT INTO `qrtz_job_details` VALUES ('PlatformScheduler', 'TASK_3', 'DEFAULT', null, 'com.platform.utils.ScheduleJob', '0', '0', '0', '0', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000165D7691F6C7874000D3020302F31202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000374000E67657457656978696E546F6B656E70740016616363657373732D746F6B656EE5AE9AE697B6E599A8737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000007800);
 
 -- ----------------------------
 -- Table structure for qrtz_locks
@@ -220,7 +219,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 -- ----------------------------
 -- Records of qrtz_scheduler_state
 -- ----------------------------
-INSERT INTO `qrtz_scheduler_state` VALUES ('PlatformScheduler', 'SC-2018071409461536913395607', '1536913771101', '15000');
+INSERT INTO `qrtz_scheduler_state` VALUES ('PlatformScheduler', 'SC-2018071409461536929807111', '1536930974662', '15000');
 
 -- ----------------------------
 -- Table structure for qrtz_simple_triggers
@@ -308,8 +307,7 @@ CREATE TABLE `qrtz_triggers` (
 -- ----------------------------
 -- Records of qrtz_triggers
 -- ----------------------------
-INSERT INTO `qrtz_triggers` VALUES ('PlatformScheduler', 'TASK_1', 'DEFAULT', 'TASK_1', 'DEFAULT', null, '1507390200000', '-1', '5', 'PAUSED', 'CRON', '1507388787000', '0', null, '2', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000158BAF593307874000E3020302F3330202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000174000474657374740008706C6174666F726D74000FE69C89E58F82E695B0E6B58BE8AF95737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000017800);
-INSERT INTO `qrtz_triggers` VALUES ('PlatformScheduler', 'TASK_2', 'DEFAULT', 'TASK_2', 'DEFAULT', null, '1507390200000', '-1', '5', 'PAUSED', 'CRON', '1507388787000', '0', null, '2', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000158C377C4607874000E3020302F3330202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000274000574657374327074000FE697A0E58F82E695B0E6B58BE8AF95737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000017800);
+INSERT INTO `qrtz_triggers` VALUES ('PlatformScheduler', 'TASK_3', 'DEFAULT', 'TASK_3', 'DEFAULT', null, '1536931800000', '1536930000000', '5', 'WAITING', 'CRON', '1536917315000', '0', null, '2', 0xACED0005737200156F72672E71756172747A2E4A6F62446174614D61709FB083E8BFA9B0CB020000787200266F72672E71756172747A2E7574696C732E537472696E674B65794469727479466C61674D61708208E8C3FBC55D280200015A0013616C6C6F77735472616E7369656E74446174617872001D6F72672E71756172747A2E7574696C732E4469727479466C61674D617013E62EAD28760ACE0200025A000564697274794C00036D617074000F4C6A6176612F7574696C2F4D61703B787001737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000174000D4A4F425F504152414D5F4B455973720025636F6D2E706C6174666F726D2E656E746974792E5363686564756C654A6F62456E7469747900000000000000010200084C00086265616E4E616D657400124C6A6176612F6C616E672F537472696E673B4C000A63726561746554696D657400104C6A6176612F7574696C2F446174653B4C000E63726F6E45787072657373696F6E71007E00094C00056A6F6249647400104C6A6176612F6C616E672F4C6F6E673B4C000A6D6574686F644E616D6571007E00094C0006706172616D7371007E00094C000672656D61726B71007E00094C00067374617475737400134C6A6176612F6C616E672F496E74656765723B7870740008746573745461736B7372000E6A6176612E7574696C2E44617465686A81014B5974190300007870770800000165D7691DB87874000E3020302F3330202A202A202A203F7372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000000000000374000E67657457656978696E546F6B656E70740016616363657373732D746F6B656EE5AE9AE697B6E599A8737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C75657871007E0013000000007800);
 
 -- ----------------------------
 -- Table structure for rest_user
@@ -344,13 +342,12 @@ CREATE TABLE `schedule_job` (
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='定时任务';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='定时任务';
 
 -- ----------------------------
 -- Records of schedule_job
 -- ----------------------------
-INSERT INTO `schedule_job` VALUES ('1', 'testTask', 'test', 'platform', '0 0/30 * * * ?', '1', '有参数测试', '2016-12-01 23:16:46');
-INSERT INTO `schedule_job` VALUES ('2', 'testTask', 'test2', null, '0 0/30 * * * ?', '1', '无参数测试', '2016-12-03 14:55:56');
+INSERT INTO `schedule_job` VALUES ('3', 'testTask', 'getWeixinToken', null, '0 0/30 * * * ?', '0', 'accesss-token定时器', '2018-09-14 17:28:35');
 
 -- ----------------------------
 -- Table structure for schedule_job_log
@@ -368,13 +365,21 @@ CREATE TABLE `schedule_job_log` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`log_id`),
   KEY `job_id` (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='定时任务日志';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='定时任务日志';
 
 -- ----------------------------
 -- Records of schedule_job_log
 -- ----------------------------
-INSERT INTO `schedule_job_log` VALUES ('3', '3', 'testTask', 'test2', null, '0', null, '2', '2017-11-21 14:01:17');
-INSERT INTO `schedule_job_log` VALUES ('4', '1', 'testTask', 'test', 'platform', '0', null, '1036', '2017-11-21 15:12:37');
+INSERT INTO `schedule_job_log` VALUES ('5', '3', 'testTask', 'getWeixinToken', null, '0', null, '496', '2018-09-14 17:28:41');
+INSERT INTO `schedule_job_log` VALUES ('6', '3', 'testTask', 'getWeixinToken', null, '0', null, '267', '2018-09-14 17:29:00');
+INSERT INTO `schedule_job_log` VALUES ('7', '3', 'testTask', 'getWeixinToken', null, '0', null, '828', '2018-09-14 17:30:00');
+INSERT INTO `schedule_job_log` VALUES ('8', '3', 'testTask', 'getWeixinToken', null, '0', null, '258', '2018-09-14 17:30:44');
+INSERT INTO `schedule_job_log` VALUES ('9', '3', 'testTask', 'getWeixinToken', null, '0', null, '8254', '2018-09-14 18:00:00');
+INSERT INTO `schedule_job_log` VALUES ('10', '3', 'testTask', 'getWeixinToken', null, '1', 'java.util.concurrent.ExecutionException: com.platform.utils.RRException: 执行定时任务失败', '46', '2018-09-14 19:30:00');
+INSERT INTO `schedule_job_log` VALUES ('11', '3', 'testTask', 'getWeixinToken', null, '1', 'java.util.concurrent.ExecutionException: com.platform.utils.RRException: 执行定时任务失败', '470', '2018-09-14 19:46:00');
+INSERT INTO `schedule_job_log` VALUES ('12', '3', 'testTask', 'getWeixinToken', null, '0', null, '3116', '2018-09-14 20:00:00');
+INSERT INTO `schedule_job_log` VALUES ('13', '3', 'testTask', 'getWeixinToken', null, '0', null, '379', '2018-09-14 20:45:01');
+INSERT INTO `schedule_job_log` VALUES ('14', '3', 'testTask', 'getWeixinToken', null, '0', null, '2631', '2018-09-14 21:00:00');
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -492,6 +497,7 @@ INSERT INTO `sys_log` VALUES ('004c768544424b459ab72225b93f73be', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('0077463a605b42639b0499173077de83', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 09:10:32');
 INSERT INTO `sys_log` VALUES ('02f3c68575764bc4b1e0b17ae00fb16a', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 08:13:04');
 INSERT INTO `sys_log` VALUES ('03ce74110c704116a3e5d16501d6d0e7', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 06:45:53');
+INSERT INTO `sys_log` VALUES ('05a0ccb4ea434a8c8fc1b50a2375002d', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 19:55:11');
 INSERT INTO `sys_log` VALUES ('08f7afc13706452bb336d7ed93225079', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 00:26:47');
 INSERT INTO `sys_log` VALUES ('0b311c28c8544be3819b088b85752b1b', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 09:10:38');
 INSERT INTO `sys_log` VALUES ('0b43f88dd7cf400685b1e8647cb0c7fd', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 12:01:26');
@@ -506,13 +512,18 @@ INSERT INTO `sys_log` VALUES ('19b6c63b680b48bfa6adb888b6f839f2', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('19fea9fe658e4c4780fc49257d469003', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 08:43:45');
 INSERT INTO `sys_log` VALUES ('1a0320badc77411680d5494cba38d395', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1511152719000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"leaf\":false,\"menuId\":\"0602\",\"name\":\"新增\",\"orderNum\":2,\"parentId\":\"06\",\"parentName\":\"标签管理\",\"perms\":\"sys:tag:save\",\"selected\":false,\"status\":1,\"type\":2,\"updateTime\":1511152721000}', '0:0:0:0:0:0:0:1', '2018-09-14 07:53:23');
 INSERT INTO `sys_log` VALUES ('1d3b7872bf3343378ef5c618fbeb877a', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 15:58:40');
+INSERT INTO `sys_log` VALUES ('2328ca7234c34ca4b8c3a41f7b0ab1ca', 'admin', 'com.platform.controller.ScheduleJobController.run()', '立即执行任务', '[3]', '0:0:0:0:0:0:0:1', '2018-09-14 17:30:44');
+INSERT INTO `sys_log` VALUES ('240f9fea610b4bbe8d55dd1165c5b82c', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 19:54:40');
 INSERT INTO `sys_log` VALUES ('2429b898b5564995a9ea2953f5f2cb33', 'admin', 'com.platform.controller.SysMenuController.save()', '保存菜单', '{\"checked\":false,\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-sitemap\",\"leaf\":false,\"name\":\"标签管理\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"perms\":\"\",\"selected\":false,\"status\":1,\"type\":1,\"url\":\"sys/tag.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 07:07:54');
+INSERT INTO `sys_log` VALUES ('2bfbf43f637d45e6a6775371178ae4e3', 'admin', 'com.platform.controller.ScheduleJobController.run()', '立即执行任务', '[3]', '0:0:0:0:0:0:0:1', '2018-09-14 17:28:41');
 INSERT INTO `sys_log` VALUES ('2c576eb67ae2481ba1effcac61c9f65f', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:51:45');
 INSERT INTO `sys_log` VALUES ('2d7653be0a714ec28c5e000633a94fc2', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 10:38:03');
 INSERT INTO `sys_log` VALUES ('2dbc02a6c19940c0b66a00e9af6f457e', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1536856764000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-cog\",\"leaf\":false,\"menuId\":\"05\",\"name\":\"公众号\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":1,\"updateTime\":1536875732000,\"updateUser\":\"1\",\"url\":\"sys/wechatsetting.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 07:04:51');
 INSERT INTO `sys_log` VALUES ('2decc9c598b84df480d1e059234ee31e', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 09:29:44');
 INSERT INTO `sys_log` VALUES ('30d070a48eb049b69d6c8289d9c6a85c', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-18 08:16:33');
+INSERT INTO `sys_log` VALUES ('31bf1eb42cba43a5a530f5bc676ee0bf', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 20:02:52');
 INSERT INTO `sys_log` VALUES ('3270091713624472a934a97d27e93191', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 10:45:34');
+INSERT INTO `sys_log` VALUES ('334ade2b3fc2464a8289fa4ae0bd2e0f', 'admin', 'com.platform.controller.ScheduleJobController.delete()', '删除定时任务', '[2,1]', '0:0:0:0:0:0:0:1', '2018-09-14 17:51:43');
 INSERT INTO `sys_log` VALUES ('34c8f4a060e84a07a380dcaf087efc62', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-16 21:39:14');
 INSERT INTO `sys_log` VALUES ('357b6c7f36184b139c30f049b954f711', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1536856764000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-cog\",\"leaf\":false,\"menuId\":\"05\",\"name\":\"公众号管理\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":1,\"updateTime\":1536879891000,\"updateUser\":\"1\",\"url\":\"sys/wechatsetting.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 07:05:25');
 INSERT INTO `sys_log` VALUES ('35cecd5ab3094f8aa8fa3826cd2209ba', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 09:39:42');
@@ -530,17 +541,24 @@ INSERT INTO `sys_log` VALUES ('4d424fcab0d54cc7aeff5921664f4cd3', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('4d4fd07cc21b46a3a60d09ed1755cd78', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 00:26:39');
 INSERT INTO `sys_log` VALUES ('5589e3d98b0346a3acfccd71ae599354', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 14:53:53');
 INSERT INTO `sys_log` VALUES ('5b8ff0082424435fb157256673d0f089', 'admin', 'com.platform.controller.SysMenuController.save()', '保存菜单', '{\"checked\":false,\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-cog\",\"leaf\":false,\"name\":\"公众号设置\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":0}', '0:0:0:0:0:0:0:1', '2018-09-14 00:39:24');
+INSERT INTO `sys_log` VALUES ('605fd2f942564995aab4c11b268525b2', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 17:50:29');
 INSERT INTO `sys_log` VALUES ('6767253024514bf381c26e2d372aa456', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 10:41:20');
+INSERT INTO `sys_log` VALUES ('693cc8a49fba44ee868c3fe73f2d6d26', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 19:54:59');
 INSERT INTO `sys_log` VALUES ('6ac8830135394b5398042cd93a3b0699', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1511152719000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"leaf\":false,\"menuId\":\"0502\",\"name\":\"新增\",\"orderNum\":2,\"parentId\":\"05\",\"parentName\":\"公众号管理\",\"perms\":\"sys:wechatsetting:save\",\"selected\":false,\"status\":1,\"type\":2,\"updateTime\":1511152721000}', '0:0:0:0:0:0:0:1', '2018-09-14 07:53:32');
 INSERT INTO `sys_log` VALUES ('6e591d4ced02445ebc9df34c918e4842', 'admin', 'com.platform.controller.SysRoleController.update()', '修改角色', '{\"createTime\":1511241575000,\"createUser\":\"1\",\"deptId\":\"01\",\"deptIdList\":[\"01\",\"0101\",\"0102\",\"0106\"],\"deptName\":\"大平台\",\"menuIdList\":[\"05\",\"0501\",\"0502\",\"0503\",\"0504\",\"01\",\"0101\",\"010101\",\"010102\",\"010103\",\"010104\",\"0102\",\"010201\",\"010202\",\"010203\",\"010204\",\"0103\",\"010301\",\"010302\",\"010303\",\"010304\",\"0104\",\"010401\",\"010402\",\"010403\",\"010404\",\"0105\",\"010501\",\"010502\",\"010503\",\"010504\",\"0106\",\"0107\",\"010701\",\"010702\",\"010703\",\"010704\",\"0108\",\"010801\",\"010802\",\"010803\",\"010804\",\"0109\",\"010901\",\"02\",\"0201\",\"0202\",\"03\",\"0301\",\"030101\",\"030102\",\"030103\",\"030104\",\"030105\",\"030106\",\"030107\",\"0302\",\"04\",\"0401\",\"040101\"],\"remark\":\"superadmin\",\"roleId\":\"1acae81674cf4525a2b2eec2e065965c\",\"roleName\":\"superadmin\",\"updateTime\":1536874562000,\"updateUser\":\"1\"}', '0:0:0:0:0:0:0:1', '2018-09-14 06:50:20');
 INSERT INTO `sys_log` VALUES ('75b3a8dd5f4543fdaebce6e3a0dc59bf', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 11:24:48');
+INSERT INTO `sys_log` VALUES ('77325f99ac6d41d8973a4ad3b0ce58d7', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 17:52:28');
 INSERT INTO `sys_log` VALUES ('79204b90f4494071960f41a0f2aaed3c', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 00:39:45');
 INSERT INTO `sys_log` VALUES ('7ac67de3e73f49dcabd2ca840296fa54', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 07:50:08');
+INSERT INTO `sys_log` VALUES ('7c6e694e5aa249108b1a1feddc6bcbff', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 17:56:29');
 INSERT INTO `sys_log` VALUES ('80ad6e425d4c463bbce52fee24b53e39', 'admin', 'com.platform.controller.SysRoleController.update()', '修改角色', '{\"createTime\":1511241575000,\"createUser\":\"1\",\"deptId\":\"01\",\"deptIdList\":[\"01\",\"0101\",\"0102\",\"0106\"],\"deptName\":\"大平台\",\"menuIdList\":[\"05\",\"0501\",\"0502\",\"0503\",\"0504\",\"01\",\"0101\",\"010101\",\"010102\",\"010103\",\"010104\",\"0102\",\"010201\",\"010202\",\"010203\",\"010204\",\"0103\",\"010301\",\"010302\",\"010303\",\"010304\",\"0104\",\"010401\",\"010402\",\"010403\",\"010404\",\"0105\",\"010501\",\"010502\",\"010503\",\"010504\",\"0106\",\"0107\",\"010701\",\"010702\",\"010703\",\"010704\",\"0108\",\"010801\",\"010802\",\"010803\",\"010804\",\"0109\",\"010901\",\"02\",\"0201\",\"0202\",\"03\",\"0301\",\"030101\",\"030102\",\"030103\",\"030104\",\"030105\",\"030106\",\"030107\",\"0302\",\"04\",\"0401\",\"040101\"],\"remark\":\"superadmin\",\"roleId\":\"1acae81674cf4525a2b2eec2e065965c\",\"roleName\":\"superadmin\",\"updateTime\":1514194040000,\"updateUser\":\"1\"}', '0:0:0:0:0:0:0:1', '2018-09-14 05:35:00');
 INSERT INTO `sys_log` VALUES ('8149855f66744cd7977c564e44f0882d', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 06:52:06');
 INSERT INTO `sys_log` VALUES ('85c7bd9d9df046eca54b7bea9733c023', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 06:52:11');
 INSERT INTO `sys_log` VALUES ('862178426efe4c3f88fbba4deba88883', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 10:41:13');
 INSERT INTO `sys_log` VALUES ('8b4a252848c84bdca71fd237d254699a', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 07:33:01');
+INSERT INTO `sys_log` VALUES ('8b4b1ff0696a46899a9ef16e254b26b1', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 20:44:31');
+INSERT INTO `sys_log` VALUES ('8d2bc01b575343c99f4c3130d0aed4c0', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 17:44:32');
+INSERT INTO `sys_log` VALUES ('8d485cbfebd34c4990d68eb06b800d5a', 'admin', 'com.platform.controller.ScheduleJobController.update()', '修改定时任务', '{\"beanName\":\"testTask\",\"createTime\":1536917315000,\"cronExpression\":\"0 0/30 * * * ?\",\"jobId\":3,\"methodName\":\"getWeixinToken\",\"remark\":\"accesss-token定时器\",\"status\":0}', '0:0:0:0:0:0:0:1', '2018-09-14 17:30:36');
 INSERT INTO `sys_log` VALUES ('8da5b6ce8b494ef5a06c350693d7c4cc', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:25:56');
 INSERT INTO `sys_log` VALUES ('8f39d65dc5634a168a1fb802f6fbbff1', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 14:43:22');
 INSERT INTO `sys_log` VALUES ('8fb3b2066b154807a404dcf59d3a282d', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 09:10:45');
@@ -551,6 +569,7 @@ INSERT INTO `sys_log` VALUES ('a13710f4b7624fd0af4de2d573a40e2a', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('a31b81a810254d2183062842c4e77dfb', 'admin', 'com.platform.controller.SysRoleController.update()', '修改角色', '{\"createTime\":1511241575000,\"createUser\":\"1\",\"deptId\":\"01\",\"deptIdList\":[\"01\",\"0101\",\"0102\",\"0106\"],\"deptName\":\"大平台\",\"menuIdList\":[\"05\",\"0501\",\"0502\",\"0503\",\"0504\",\"01\",\"0101\",\"010101\",\"010102\",\"010103\",\"010104\",\"0102\",\"010201\",\"010202\",\"010203\",\"010204\",\"0103\",\"010301\",\"010302\",\"010303\",\"010304\",\"0104\",\"010401\",\"010402\",\"010403\",\"010404\",\"0105\",\"010501\",\"010502\",\"010503\",\"010504\",\"0106\",\"0107\",\"010701\",\"010702\",\"010703\",\"010704\",\"0108\",\"010801\",\"010802\",\"010803\",\"010804\",\"0109\",\"010901\",\"02\",\"0201\",\"0202\",\"03\",\"0301\",\"030101\",\"030102\",\"030103\",\"030104\",\"030105\",\"030106\",\"030107\",\"0302\",\"04\",\"0401\",\"040101\"],\"remark\":\"superadmin\",\"roleId\":\"1acae81674cf4525a2b2eec2e065965c\",\"roleName\":\"superadmin\",\"updateTime\":1536874500000,\"updateUser\":\"1\"}', '0:0:0:0:0:0:0:1', '2018-09-14 05:36:02');
 INSERT INTO `sys_log` VALUES ('a451eccc83e84eae8e05cd5303e194e7', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:13:37');
 INSERT INTO `sys_log` VALUES ('a5602872dd5148edab4df211be501b8b', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 14:55:30');
+INSERT INTO `sys_log` VALUES ('a65e870926614e7a955c18a510c57c66', 'admin', 'com.platform.controller.ScheduleJobController.save()', '保存定时任务', '{\"beanName\":\"testTask\",\"cronExpression\":\"0 0/1 * * * ?\",\"methodName\":\"getWeixinToken\",\"remark\":\"accesss-token定时器\"}', '0:0:0:0:0:0:0:1', '2018-09-14 17:28:35');
 INSERT INTO `sys_log` VALUES ('a80a29b9f17245b49c677bce1628e7bd', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:32:54');
 INSERT INTO `sys_log` VALUES ('ac111d7f1db743c3a6a17b2f4416b794', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 11:51:42');
 INSERT INTO `sys_log` VALUES ('b75a15fcf1594722a97260033fac7fb1', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 06:50:37');
@@ -562,6 +581,7 @@ INSERT INTO `sys_log` VALUES ('bf6e20c3f048449d8a24037463a8caf0', 'admin', 'com.
 INSERT INTO `sys_log` VALUES ('bfa5fe4d2cbd41d6b615f38543829cdf', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-18 08:14:22');
 INSERT INTO `sys_log` VALUES ('c01999a86d6f42248b603238bb410862', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:19:18');
 INSERT INTO `sys_log` VALUES ('c02611148c014ee0b77aac9e1db3a72a', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 00:32:24');
+INSERT INTO `sys_log` VALUES ('c1aed3fce512441c9e9fc538d4e28a47', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 19:54:47');
 INSERT INTO `sys_log` VALUES ('c31f470a6e87467294ab94ec8b3b00b8', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 05:45:59');
 INSERT INTO `sys_log` VALUES ('c3442250cc01499a932a36014bae9c94', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 11:02:39');
 INSERT INTO `sys_log` VALUES ('c382cf2cb5dc491a86166da6c84fe3f6', 'admin', 'com.platform.controller.SysMenuController.save()', '保存菜单', '{\"checked\":false,\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-user\",\"leaf\":false,\"name\":\"用户管理\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":1,\"url\":\"sys/member.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 07:51:22');
@@ -569,10 +589,13 @@ INSERT INTO `sys_log` VALUES ('c4443313d5ae477c9787adf8860ff7d3', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('c84f396235ed400ca9ad84a974bfd2fe', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 11:26:26');
 INSERT INTO `sys_log` VALUES ('c8f746a135b6472a9167610cea060bab', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 10:40:13');
 INSERT INTO `sys_log` VALUES ('cbc4df86f3ee4bf2af120c862cc3b475', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 06:27:54');
+INSERT INTO `sys_log` VALUES ('ccc9528f1ac94df28129284465918cf8', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 19:44:30');
+INSERT INTO `sys_log` VALUES ('d058c3212fbe4b22aa531360e5a4bda5', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 17:26:53');
 INSERT INTO `sys_log` VALUES ('d137946ee8ae4323876a47df8128713d', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 06:20:12');
 INSERT INTO `sys_log` VALUES ('dbfa939227054ec39a4195e016bc6a29', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 14:00:15');
 INSERT INTO `sys_log` VALUES ('ddf939e810364239baf0a0ee4e05fb57', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 16:24:06');
 INSERT INTO `sys_log` VALUES ('e137d07308da4167a0bdff787707634c', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1511152680000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"leaf\":false,\"menuId\":\"0501\",\"name\":\"查看\",\"orderNum\":1,\"parentId\":\"05\",\"parentName\":\"公众号设置\",\"perms\":\"sys:wechatsetting:list,sys:wechatsetting:info\",\"selected\":false,\"status\":1,\"type\":2,\"updateTime\":1511152681000}', '0:0:0:0:0:0:0:1', '2018-09-14 05:50:11');
+INSERT INTO `sys_log` VALUES ('e310aae364bc48eaac4abf1e6a000bb2', 'admin', 'com.platform.controller.ScheduleJobController.run()', '立即执行任务', '[3]', '0:0:0:0:0:0:0:1', '2018-09-14 19:45:59');
 INSERT INTO `sys_log` VALUES ('e499a49916cb41999038a748c78a5f7b', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1536856764000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-cog\",\"leaf\":false,\"menuId\":\"05\",\"name\":\"公众号设置\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":1,\"updateTime\":1536873616000,\"updateUser\":\"1\",\"url\":\"sys/wechatsetting.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 05:30:32');
 INSERT INTO `sys_log` VALUES ('e7a35e5c0c634ebe82ee768bc10bfbdd', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 06:51:23');
 INSERT INTO `sys_log` VALUES ('ea530d93caa641dbbd584ad1a503ea40', 'admin', 'com.platform.controller.SysMenuController.update()', '修改菜单', '{\"checked\":false,\"createTime\":1536856764000,\"createUser\":\"1\",\"disableCheckbox\":false,\"disabled\":false,\"domainId\":\"735e3dd6bb4f4a9191a66761d6g73918\",\"expand\":false,\"icon\":\"fa fa-cog\",\"leaf\":false,\"menuId\":\"05\",\"name\":\"公众号设置\",\"orderNum\":0,\"parentId\":\"0\",\"parentName\":\"一级菜单\",\"selected\":false,\"status\":1,\"type\":1,\"url\":\"sys/wechatsetting.html\"}', '0:0:0:0:0:0:0:1', '2018-09-14 05:20:16');
@@ -586,6 +609,7 @@ INSERT INTO `sys_log` VALUES ('f3a81b0f079943d9804745e7a2ef1639', '\"admin\"', '
 INSERT INTO `sys_log` VALUES ('f3de7f9a1c8341aea7a1b862b502d8d5', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 07:14:28');
 INSERT INTO `sys_log` VALUES ('fe16d7ca79364eb1ae1d4498f7eaf26a', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-09-14 14:50:19');
 INSERT INTO `sys_log` VALUES ('fe507d01c457498c9597029b8cdc551d', '\"admin\"', 'com.platform.controller.SysLoginController.login()', '登录', '\"admin\"', '0:0:0:0:0:0:0:1', '2018-07-17 08:25:53');
+INSERT INTO `sys_log` VALUES ('fea3b4a220fb419d9ebfd57cae473954', 'admin', 'com.platform.controller.ScheduleJobController.run()', '立即执行任务', '[3]', '0:0:0:0:0:0:0:1', '2018-09-14 20:45:01');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -612,49 +636,6 @@ CREATE TABLE `sys_menu` (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES ('01', '0', '系统管理', null, null, '0', 'fa fa-cog', '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:16:22', null, '2017-11-20 12:16:25');
-INSERT INTO `sys_menu` VALUES ('0101', '01', '管理员列表', 'sys/user.html', null, '1', 'fa fa-user', '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:27:16', null, '2017-11-20 12:27:20');
-INSERT INTO `sys_menu` VALUES ('010101', '0101', '查看', null, 'sys:user:list,sys:user:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', null, '2017-11-20 12:38:01');
-INSERT INTO `sys_menu` VALUES ('010102', '0101', '新增', null, 'sys:user:save,sys:role:select', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', null, '2017-11-20 12:38:41');
-INSERT INTO `sys_menu` VALUES ('010103', '0101', '修改', null, 'sys:user:update,sys:role:select', '2', null, '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:26', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('010104', '0101', '刪除', null, 'sys:user:delete', '2', null, '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:27', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('0102', '01', '角色管理', 'sys/role.html', null, '1', 'fa fa-trophy', '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:21:14', '1', '2017-11-21 15:16:03');
-INSERT INTO `sys_menu` VALUES ('010201', '0102', '查看', null, 'sys:role:list,sys:role:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', null, '2017-11-20 12:38:01');
-INSERT INTO `sys_menu` VALUES ('010202', '0102', '新增', null, 'sys:role:save,sys:menu:perms', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', null, '2017-11-20 12:38:41');
-INSERT INTO `sys_menu` VALUES ('010203', '0102', '修改', null, 'sys:role:update,sys:menu:perms', '2', null, '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:26', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('010204', '0102', '刪除', null, 'sys:role:delete', '2', null, '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:27', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('0103', '01', '部门管理', 'sys/dept.html', null, '1', 'fa fa-sitemap', '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:35:13', null, '2017-11-20 12:35:14');
-INSERT INTO `sys_menu` VALUES ('010301', '0103', '查看', null, 'sys:dept:list,sys:dept:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', null, '2017-11-20 12:38:01');
-INSERT INTO `sys_menu` VALUES ('010302', '0103', '新增', null, 'sys:dept:save,sys:dept:select', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', null, '2017-11-20 12:38:41');
-INSERT INTO `sys_menu` VALUES ('010303', '0103', '修改', null, 'sys:dept:update', '2', null, '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:26', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('010304', '0103', '刪除', null, 'sys:dept:delete', '2', null, '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:27', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('0104', '01', '菜单管理', 'sys/menu.html', null, '1', 'fa fa-folder-open', '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:22:19', null, '2017-11-20 12:22:20');
-INSERT INTO `sys_menu` VALUES ('010401', '0104', '查看', null, 'sys:menu:list,sys:menu:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', null, '2017-11-20 12:38:01');
-INSERT INTO `sys_menu` VALUES ('010402', '0104', '新增', null, 'sys:menu:save,sys:menu:select', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', null, '2017-11-20 12:38:41');
-INSERT INTO `sys_menu` VALUES ('010403', '0104', '修改', null, 'sys:menu:update,sys:menu:select', '2', null, '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:26', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('010404', '0104', '刪除', null, 'sys:menu:delete', '2', null, '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:27', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('0105', '01', '应用域管理', 'sys/domain.html', null, '1', 'fa fa-th-large', '5', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 19:10:31', '1', '2017-11-21 15:18:13');
-INSERT INTO `sys_menu` VALUES ('010501', '0105', '查看', null, 'sys:domain:list,sys:domain:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', null, '2017-11-20 12:38:01');
-INSERT INTO `sys_menu` VALUES ('010502', '0105', '新增', null, 'sys:domain:save', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', null, '2017-11-20 12:38:41');
-INSERT INTO `sys_menu` VALUES ('010503', '0105', '修改', null, 'sys:domain:update,sys:domain:select', '2', null, '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:26', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('010504', '0105', '刪除', null, 'sys:domain:delete', '2', null, '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:39:27', null, '2017-11-20 12:39:31');
-INSERT INTO `sys_menu` VALUES ('0106', '01', '文件上传', 'sys/oss.html', 'sys:oss:all', '1', 'fa fa-cloud-upload', '6', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:33:29', '1', '2017-11-21 15:19:00');
-INSERT INTO `sys_menu` VALUES ('0107', '01', '参数管理', 'sys/config.html', null, '1', 'fa fa-cogs', '7', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:03:03', '1', '2017-11-21 15:22:00');
-INSERT INTO `sys_menu` VALUES ('010701', '0107', '新增', null, 'sys:config:save', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:04:43', null, null);
-INSERT INTO `sys_menu` VALUES ('010702', '0107', '修改', null, 'sys:config:update', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:05:11', null, null);
-INSERT INTO `sys_menu` VALUES ('010703', '0107', '删除', null, 'sys:config:delete', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:05:32', null, null);
-INSERT INTO `sys_menu` VALUES ('010704', '0107', '查看', null, 'sys:config:list,sys:config:info', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:06:00', null, null);
-INSERT INTO `sys_menu` VALUES ('0108', '01', '数据字典', 'sys/dict.html', null, '1', 'fa fa-group', '8', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:17:19', '1', '2017-11-21 15:21:49');
-INSERT INTO `sys_menu` VALUES ('010801', '0108', '查看', null, 'sys:dict:list,sys:dict:info', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 17:17:33', null, null);
-INSERT INTO `sys_menu` VALUES ('010802', '0108', '新增', null, 'sys:dict:save', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 17:17:54', null, null);
-INSERT INTO `sys_menu` VALUES ('010803', '0108', '修改', null, 'sys:dict:update', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 17:18:08', null, null);
-INSERT INTO `sys_menu` VALUES ('010804', '0108', '删除', null, 'sys:dict:delete', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 17:18:21', null, null);
-INSERT INTO `sys_menu` VALUES ('0109', '01', '系统日志', 'sys/log.html', null, '1', 'fa fa-code', '9', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:17:19', '1', '2017-11-21 15:21:49');
-INSERT INTO `sys_menu` VALUES ('010901', '0109', '查看', null, 'sys:log:list', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-21 14:18:18', null, null);
-INSERT INTO `sys_menu` VALUES ('02', '0', '代码工具', null, null, '0', 'fa fa-coffee', '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:18:36', '1', '2017-11-21 15:15:05');
-INSERT INTO `sys_menu` VALUES ('0201', '02', 'SQL监控', 'druid/sql.html', null, '1', 'fa fa-linux', '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:23:55', null, '2017-11-20 12:23:58');
-INSERT INTO `sys_menu` VALUES ('0202', '02', '代码生成器', 'sys/generator.html', 'sys:generator:list,sys:generator:code', '1', 'fa fa-rocket', '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:25:30', null, '2017-11-20 12:25:32');
-INSERT INTO `sys_menu` VALUES ('0203', '02', 'swagger接口列表', 'swagger-ui.html', null, '1', 'fa fa-code', '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2018-06-18 13:18:51', '1', '2018-06-18 13:19:16');
 INSERT INTO `sys_menu` VALUES ('03', '0', '任务管理', null, null, '0', 'fa fa-fire', '3', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:27:15', null, '2017-11-20 12:27:19');
 INSERT INTO `sys_menu` VALUES ('0301', '03', '定时任务', 'sys/schedule.html', null, '1', 'fa fa-tasks', '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:28:45', null, '2017-11-20 12:28:47');
 INSERT INTO `sys_menu` VALUES ('030101', '0301', '查看', null, 'sys:schedule:list,sys:schedule:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:47:45', null, '2017-11-20 12:47:48');
@@ -665,11 +646,6 @@ INSERT INTO `sys_menu` VALUES ('030105', '0301', '暂停', null, 'sys:schedule:p
 INSERT INTO `sys_menu` VALUES ('030106', '0301', '恢复', null, 'sys:schedule:resume', '2', null, '6', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:47:45', null, '2017-11-20 12:47:48');
 INSERT INTO `sys_menu` VALUES ('030107', '0301', '立即执行', null, 'sys:schedule:run', '2', null, '7', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:47:45', null, '2017-11-20 12:47:48');
 INSERT INTO `sys_menu` VALUES ('0302', '03', '定时任务日志', 'sys/schedule_log.html', 'sys:schedule:log', '1', 'fa fa-code', '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:31:16', '1', '2017-11-21 15:35:45');
-INSERT INTO `sys_menu` VALUES ('04', '0', '短信平台', null, null, '0', 'fa fa-television', '4', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-16 23:42:22', '1', '2017-12-17 11:55:56');
-INSERT INTO `sys_menu` VALUES ('0401', '04', '短信配置', 'sys/smslog.html', null, '1', 'fa fa-envelope-open', '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-16 23:45:35', '1', '2017-12-25 19:13:37');
-INSERT INTO `sys_menu` VALUES ('040101', '0401', '查看', null, 'sys:smslog:list,sys:smslog:info', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-16 23:46:10', null, null);
-INSERT INTO `sys_menu` VALUES ('040102', '0401', '短信配置', null, 'sys:smslog:saveConfig', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 19:17:39', null, null);
-INSERT INTO `sys_menu` VALUES ('040103', '0401', '发送短信', null, 'sys:smslog:sendSms', '2', null, '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-12-25 19:17:59', null, null);
 INSERT INTO `sys_menu` VALUES ('05', '0', '公众号管理', 'sys/wechatsetting.html', null, '1', 'fa fa-cog', '0', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2018-09-14 00:39:24', '1', '2018-09-14 07:05:25');
 INSERT INTO `sys_menu` VALUES ('0501', '05', '查看', null, 'sys:wechatsetting:list,sys:wechatsetting:info', '2', null, '1', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:00', '1', '2018-09-14 05:50:11');
 INSERT INTO `sys_menu` VALUES ('0502', '05', '新增', null, 'sys:wechatsetting:save', '2', null, '2', '735e3dd6bb4f4a9191a66761d6g73918', '1', '1', '2017-11-20 12:38:39', '1', '2018-09-14 07:53:32');
@@ -947,6 +923,23 @@ CREATE TABLE `tb_token` (
 -- ----------------------------
 -- Records of tb_token
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for tb_weixin_token
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_weixin_token`;
+CREATE TABLE `tb_weixin_token` (
+  `schoolId` varchar(32) NOT NULL,
+  `createTime` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `token` varchar(255) NOT NULL,
+  `jsapi_ticket` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`schoolId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_weixin_token
+-- ----------------------------
+INSERT INTO `tb_weixin_token` VALUES ('d155164d7dd74f74833cb5b780ba49fa', '2018-09-14 21:00:03', '13_B0It4BDBO7PXej_YK9sexV4jk5b10-89QGuq1mhXnoFRHf588zdPnET3TMk9qvPBsulHANhvj7Ss_LZsz8qY2t-JWhBB7n_0VNcglIfU_TR92cClSPxT1eIg0YD-VuQNRMMwrez6IBAB7u-wPWJeAEAGNA', null);
 
 -- ----------------------------
 -- Table structure for wechat_setting

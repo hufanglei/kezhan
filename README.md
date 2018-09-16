@@ -60,50 +60,7 @@
         
         定时任务
         
-        短信服务平台
-            安全起见，需配置有效IP地址。ApiSmsController.VALID_IP
-            然后配置短信平台账户信息
-		    向外提供发送短信接口：
-		        http://域名:端口/api/sendSms?mobile=13000000000,15209831990&content=发送的短信内容
+   
 		
-		开发环境配置：
-			platform-admin/src/main/resources/dev/log4j.properties
-			platform-admin/src/main/resources/dev/platform.properties
-		开发环境打包：
-			项目根目录>mvn package
-		
-		生产环境配置：
-			platform-admin/src/main/resources/prod/log4j.properties
-			platform-admin/src/main/resources/prod/platform.properties
-		生产环境打包：
-			项目根目录>mvn package -P prod
-		
-		打包路径：
-			platform-framework\target\platform-framework.war
-		
-		
-    后台管理项目演示
-    演示地址：http://fly2you.cn/platform-framework
-    账号密码：admin/admin
     
-    如何交流、反馈、参与贡献？
-    官方QQ群：66502035
-    git：https://gitee.com/fuyang_lipengjun/platform-framework
-    GitHub：https://github.com/lipengjun92/platform
-    如需获取项目最新源码，请Watch、Star项目，同时也是对项目最好的支持
-
-	
-### 登录页面
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13484892802ad2.png "登录")
-### 首页
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/134920465c011b.png "首页")
-### 菜单管理
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/135042481d1b4e.png "菜单管理")
-### 多系统切换
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/134937754189a3.png "多系统切换")
-### 角色授权
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13495698447ff5.png "角色授权")
-### 短信发送
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/1350145323d71d.png "短信发送")
-### 捐赠
-![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13505517181d30.png "捐赠")# base-platform
+  

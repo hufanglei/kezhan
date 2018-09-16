@@ -10,6 +10,8 @@ public class Parameter {
 
     //订阅号
     //随即戳
+//    public static  String encodingAESKey = "vcve424Oo49NkjWgo8j24ojcFOPOxdPxQFE9A2GRd2r";
+    //个人订阅号
     public static  String encodingAESKey = "vcve424Oo49NkjWgo8j24ojcFOPOxdPxQFE9A2GRd2r";
     //应用id
    // public static String corId  = "wx0cf227cc0e526f1c";
@@ -18,8 +20,10 @@ public class Parameter {
     //测试号
     //随即戳
 //    //应用id
-    public static String corId  = "wx1837bb00d024409b";
-     public static String appsecret  = "6fe04217c3550c2a9a34e64edc34dbb6";
+//    public static String corId  = "wx1837bb00d024409b";
+    public static String corId  = "wx0cf227cc0e526f1c";
+//     public static String appsecret  = "6fe04217c3550c2a9a34e64edc34dbb6";
+     public static String appsecret  = "d84b55b24bc80d2090c22bec91756fdc";
 //
 
 
